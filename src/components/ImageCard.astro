@@ -1,0 +1,41 @@
+---
+interface Props {
+	title: string;
+    body: string
+	image_path: string;
+}
+
+const { title, body, image_path } = Astro.props;
+---
+
+<div class="card">
+	<div class="icon">
+		<img src={image_path} width=120 />
+	</div>
+	<h2>
+		{body}
+	</h2>
+</div>
+<style>
+	.card {
+		display: flex;
+		width: 100%;
+		color: black;
+        flex-wrap: wrap;
+	}
+	h2 {
+		font-size: 1.25rem;
+		margin-top: auto;
+		margin-bottom: auto;
+		flex: 4;
+	}
+	.icon {
+		flex-grow: 1;
+		height: 160px;
+		display: flex;
+	}
+	.icon > img {
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+</style>

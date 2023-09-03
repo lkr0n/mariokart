@@ -1,0 +1,38 @@
+---
+import { cups } from '../globals'
+interface Props {
+    cup: keyof typeof cups;
+	track: keyof typeof cups[cup];
+}
+
+// width and height of the cup sprite in pixels
+const { cup, track } = Astro.props;
+const cup_img_path = "cups/cup-" + cups[cup].id + ".png"
+const track_thumbnail_path = "course-thumbnails/" + (cups[cup].id + 1) + "-" + (track.id + 1) + ".jpg"
+---
+
+<div class="track">
+    <img src={cup_img_path} width=106 height=122 /> 
+    <h2>
+        {track.title}
+    </h2>
+    <img src={track_thumbnail_path} width=217 height=122/> 
+</div>
+
+<style>
+    .track {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+	.track > h2 {
+        flex: 2;
+		margin-left: 1em;
+		font-size: 2rem;
+	}
+    .track > img {
+        flex: 1;
+        flex-grow: 0;
+        margin: 5px;
+    }
+</style>
