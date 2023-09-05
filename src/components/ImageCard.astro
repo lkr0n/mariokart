@@ -1,11 +1,10 @@
 ---
 interface Props {
-	title: string;
     body: string
 	image_path: string;
 }
 
-const { title, body, image_path } = Astro.props;
+const { body, image_path } = Astro.props;
 ---
 
 <div class="card">
@@ -24,7 +23,7 @@ const { title, body, image_path } = Astro.props;
         flex-wrap: wrap;
 	}
 	h2 {
-		font-size: 1.25rem;
+		font-size: 2rem;
 		margin-top: auto;
 		margin-bottom: auto;
 		flex: 4;

@@ -4,14 +4,6 @@ function chooseRandomElement<T>(elements: T[]) {
     return elements[Math.floor(Math.random() * elements.length)]
 }
 
-function chooseRandomTrack() {
-    const cup = chooseRandomElement(Object.keys(cups)) as keyof typeof cups;
-    return {
-        cup: cup,
-        track: chooseRandomElement(cups[cup].tracks)
-    };
-}
-
 const drivers = [
     { name: 'Baby Peach', filename: 'MK8DX_Baby_Peach_Icon.png' },
     { name: 'Baby Daisy', filename: 'MK8DX_Baby_Daisy_Icon.png' },
@@ -147,10 +139,10 @@ const vehicles = [
 	{name:"Inkstriker", filename: '120px-MK8DX_Inkstriker.png' },
 ];
 
-const cups = {
-    // BASE GAME
-    Mushroom: {
+const cups = [
+    {
         id: 0,
+        name: "Mushroom",
         tracks: [ 
             { id: 0, title: 'Mario Kart Stadium' },
             { id: 1, title: 'Water Park'},
@@ -158,8 +150,9 @@ const cups = {
             { id: 3, title: 'Thwomp Ruins'}
         ],
     },
-    Flower: {
+    {
         id: 1,
+        name: "Flower",
         tracks:[
             { id: 0, title: 'Mario Circuit' },
             { id: 1, title: 'Toad Harbor'},
@@ -167,8 +160,9 @@ const cups = {
             { id: 3, title: 'Shy Guy Falls'},
         ]
     },
-    Star: {
+    {
         id: 2,
+        name: "Star",
         tracks: [
             { id: 0, title: 'Sunshine Airport' },
             { id: 1, title: 'Dolphin Shoals'},
@@ -176,7 +170,8 @@ const cups = {
             { id: 3, title: 'Mount Wario'}
         ],
     },
-    Special: {
+    {
+        name: "Special",
         id: 3,
         tracks: [
             { id: 0, title: 'Cloudtop Cruise' },
@@ -185,7 +180,8 @@ const cups = {
             { id: 3, title: 'Rainbow Road'}
         ],
     },
-    Shell: {
+    {
+        name: "Shell",
         id: 4,
         tracks: [
             { id: 0, title: 'Wii Moo Moo Meadows'},
@@ -194,7 +190,8 @@ const cups = {
             { id: 3, title: "N64 Toad's Turnpike"}
         ],
     },
-    Banana: {
+    {
+        name: "Banana",
         id: 5,
         tracks: [
             { id: 0, title: 'GCN Dry Dry Desert'},
@@ -203,7 +200,8 @@ const cups = {
             { id: 3, title: '3DS DK Jungle'},
         ],
     },
-    Leaf: {
+    {
+        name: "Leaf",
         id: 6,
         tracks: [
             { id: 0, title: 'DS Wario Stadium'},
@@ -212,7 +210,8 @@ const cups = {
             { id: 3, title: 'N64 Yoshi Valley'},
         ],
     },
-    Lightning: {
+    {
+        name: "Lightning",
         id: 7,
         tracks: [
           { id: 0, title: "DS Tick-Tock Clock" },
@@ -221,7 +220,8 @@ const cups = {
           { id: 3, title: "N64 Rainbow Road" }
         ]
       },
-    Egg: {
+    {
+        name: "Egg",
         id: 8,
         tracks: [
             { id: 0, title: "GCN Yoshi Circuit" },
@@ -230,7 +230,8 @@ const cups = {
             { id: 3, title: "Mute City" }
         ]
     },
-    Triforce: {
+    {
+        name: "Triforce",
         id: 9,
         tracks: [
             { id: 0, title: "Wii Wario's Gold Mine" },
@@ -239,7 +240,8 @@ const cups = {
             { id: 3, title: "Hyrule Circuit" }
         ]
     },
-    Crossing: {
+    {
+        name: "Crossing",
         id: 10,
         tracks: [
             { id: 0, title: "GCN Baby Park" },
@@ -248,7 +250,8 @@ const cups = {
             { id: 3, title: "Animal Crossing" }
         ]
     },
-    Bell: {
+    {
+        name: "Bell",
         id: 11,
         tracks: [
             { id: 0, title: "3DS Neo Bowser City" },
@@ -256,13 +259,113 @@ const cups = {
             { id: 2, title: "Super Bell Subway" },
             { id: 3, title: "Big Blue" }
         ]
-    }
+    },
 
-    // TODO: DLC
-}
+    // DLC GAME
+    {
+        id: 12,
+        name: "Golden Dash",
+        tracks: [
+            { id: 0, title: "Tour Paris Promenade" },
+            { id: 1, title: "3DS Toad Circuit" },
+            { id: 2, title: "N64 Choco Mountain" },
+            { id: 3, title: "Wii Coconut Mall" }
+        ]
+    },
+    {
+        id: 13,
+        name: "Lucky Cat",
+        tracks: [
+            { id: 0, title: "Tour Tokyo Blur" },
+            { id: 1, title: "DS Shroom Ridge" },
+            { id: 2, title: "GBA Sky Garden" },
+            { id: 3, title: "Ninja Hideaway" }
+        ]
+    },
+    {
+        id: 14,
+        name: "Turnip",
+        tracks: [
+            { id: 0, title: "Tour New York Minute" },
+            { id: 1, title: "SNES Mario Circuit 3" },
+            { id: 2, title: "N64 Kalimari Desert" },
+            { id: 3, title: "DS Waluigi Pinball" }
+        ]
+    },
+    {
+        id: 15,
+        name: "Propeller",
+        tracks: [
+            { id: 0, title: "Tour Sydney Sprint" },
+            { id: 1, title: "GBA Snow Land" },
+            { id: 2, title: "Wii Mushroom Gorge" },
+            { id: 3, title: "Sky-high Sundae" }
+        ]
+    },
+    {
+        id: 16,
+        name: "Rock",
+        tracks: [
+            { id: 0, title: "Tour London Loop" },
+            { id: 1, title: "GBA Boo Lake" },
+            { id: 2, title: "3DS Rock Rock Mountain" },
+            { id: 3, title: "Wii Maple Treeway" }
+        ]
+    },
+    {
+        id: 17,
+        name: "Moon",
+        tracks: [
+            { id: 0, title: "Tour Berlin Byways" },
+            { id: 1, title: "DS Peach Gardens" },
+            { id: 2, title: "Merry Mountain" },
+            { id: 3, title: "3DS Rainbow road" }
+        ]
+    },
+    {
+        id: 18,
+        name: "Fruit",
+        tracks: [
+            { id: 0, title: "Tour Amsterdam Drift" },
+            { id: 1, title: "GBA Riverside Park" },
+            { id: 2, title: "Wii DK Summit" },
+            { id: 3, title: "Yoshi's Island" }
+        ]
+    },
+    {
+        id: 19,
+        name: "Boomerang",
+        tracks: [
+            { id: 0, title: "Tour Bangkok Rush" },
+            { id: 1, title: "DS Mario Circuit" },
+            { id: 2, title: "GCN Waluigi Stadium" },
+            { id: 3, title: "Tour Singapore Speedway" }
+        ]
+    },
+    {
+        id: 20,
+        name: "Feather",
+        tracks: [
+            { id: 0, title: "Tour Athens Dash" },
+            { id: 1, title: "GCN Daisy Cruiser" },
+            { id: 2, title: "Wii Moonview Highway" },
+            { id: 3, title: "Squeaky Clean Sprint" }
+        ]
+    },
+    {
+        id: 21,
+        name: "Cherry",
+        tracks: [
+            { id: 0, title: "Tour Los Angeles Laps" },
+            { id: 1, title: "GBA Sunset Wilds" },
+            { id: 2, title: "Wii Koopa Cape" },
+            { id: 3, title: "Tour Vancour Velocity" }
+        ]
+    }
+]
 
 export {
     website_title,
-    chooseRandomElement, chooseRandomTrack,
+    chooseRandomElement,
     drivers, gliders, vehicles, tires, cups
 }

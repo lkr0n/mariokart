@@ -8,6 +8,9 @@ dependencies:
   astro:
     specifier: ^3.0.7
     version: 3.0.7
+  tsc:
+    specifier: ^2.0.4
+    version: 2.0.4
 
 packages:
 
@@ -2949,6 +2952,11 @@ packages:
 
   /trough@2.1.0:
     resolution: {integrity: sha512-AqTiAOLcj85xS7vQ8QkAV41hPDIJ71XJB4RCUrzo/1GM2CQwhkJGaf9Hgr7BOugMRpgGUrqRg/DrBDl4H40+8g==}
+    dev: false
+
+  /tsc@2.0.4:
+    resolution: {integrity: sha512-fzoSieZI5KKJVBYGvwbVZs/J5za84f2lSTLPYf6AGiIf43tZ3GNrI1QzTLcjtyDDP4aLxd46RTZq1nQxe7+k5Q==}
+    hasBin: true
     dev: false
 
   /tsconfig-resolver@3.0.1:

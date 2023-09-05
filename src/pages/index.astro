@@ -2,9 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import ImageCard from '../components/ImageCard.astro'
 import Track from '../components/Track.astro'
-import { website_title, chooseRandomElement, chooseRandomTrack, drivers, vehicles, tires, gliders } from '../globals.ts';
+import { website_title, chooseRandomElement, cups, drivers, vehicles, tires, gliders } from '../globals.ts';
 
-const {cup, track} = chooseRandomTrack();
+const cup = chooseRandomElement(cups);
+const track = chooseRandomElement(cup.tracks)
 const driver = chooseRandomElement(drivers);
 const vehicle = chooseRandomElement(vehicles);
 const tire = chooseRandomElement(tires);
@@ -18,10 +19,10 @@ const glider = chooseRandomElement(gliders);
 		<hr>
 		<Track cup = {cup} track = {track} />
 		<hr>
-		<ImageCard title="Driver" body={driver.name} image_path={"drivers/" + driver.filename} />	
-		<ImageCard title="Vehicle" body={vehicle.name} image_path={"vehicles/" + vehicle.filename} />				
-		<ImageCard title="Wheels" body={tire.name} image_path={"tires/" + tire.filename} />				
-		<ImageCard title="Gliders" body={glider.name} image_path={"gliders/" + glider.filename} />
+		<ImageCard body={driver.name} image_path={"drivers/" + driver.filename} />	
+		<ImageCard body={vehicle.name} image_path={"vehicles/" + vehicle.filename} />				
+		<ImageCard body={tire.name} image_path={"tires/" + tire.filename} />				
+		<ImageCard body={glider.name} image_path={"gliders/" + glider.filename} />
 	</main>
 </Layout>
 

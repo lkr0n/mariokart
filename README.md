@@ -6,6 +6,6 @@
 - [X] responsive design, mobile looks like shit
 - [X] nice background image
 - [X] favicon
-- [ ] make it reactive (eat lucas' lunch)
 - [ ] dlc courses
+- [ ] make it reactive (eat lucas' lunch)
 - [ ] optimise images
