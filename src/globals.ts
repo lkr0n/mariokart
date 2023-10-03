@@ -364,6 +364,20 @@ const cups = [
     }
 ]
 
+type CupType = typeof cups[number];
+type TrackType = typeof cups[number]["tracks"][number];
+
+interface CupTrack {
+    cup: typeof cups[number];
+    track: typeof cups[number]["tracks"][number];
+}
+
+export type {
+    CupTrack,
+    CupType,
+    TrackType,
+}
+
 export {
     website_title,
     chooseRandomElement,

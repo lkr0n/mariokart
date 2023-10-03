@@ -1,9 +1,8 @@
 ---
 import { cups } from '../globals'
-interface Props {
-	cup: typeof cups[number];
-    track: typeof cup.tracks[number];
-}
+import type { CupTrack } from '../globals'
+
+type Props = CupTrack;
 
 // width and height of the cup sprite in pixels
 const { cup, track } = Astro.props;
@@ -39,7 +38,5 @@ const track_thumbnail_path = "course-thumbnails/" + (cup.id + 1) + "-" + (track.
         margin-bottom: 0;
 		white-space: nowrap;
 	}
-    .track > img {
-        margin: 5px;
-    }
+
 </style>

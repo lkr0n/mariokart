@@ -1,0 +1,24 @@
+---
+import Track from './Track.astro'
+import { cups, chooseRandomElement } from '../globals'
+import type { CupTrack, CupType, TrackType} from '../globals'
+
+interface Props {
+    countTracks: number;
+}
+
+let { countTracks } = Astro.props;
+
+let cupList = new Array<CupType>(countTracks);
+for (let i = 0; i < countTracks; i++) {
+    cupList[i] = chooseRandomElement(cups);
+}
+
+const tracks = cupList.map((cup) => ({ cup: cup, track: chooseRandomElement(cup.tracks)}))
+
+---
+<div class = "tracklist">
+    {
+        tracks.map((track: CupTrack) => <Track cup = {track.cup} track = {track.track} /> <hr>)
+    }
+</div>

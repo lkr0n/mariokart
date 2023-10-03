@@ -1,11 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ImageCard from '../components/ImageCard.astro'
-import Track from '../components/Track.astro'
+import TrackList from '../components/TrackList.astro'
 import { website_title, chooseRandomElement, cups, drivers, vehicles, tires, gliders } from '../globals.ts';
 
-const cup = chooseRandomElement(cups);
-const track = chooseRandomElement(cup.tracks)
 const driver = chooseRandomElement(drivers);
 const vehicle = chooseRandomElement(vehicles);
 const tire = chooseRandomElement(tires);
@@ -17,12 +15,13 @@ const glider = chooseRandomElement(gliders);
 		<h1>{website_title}</h1>
 		<p>Roll a random track, driver and vehicle configuration by refreshing the page.<br> Try something new today!</p>
 		<hr>
-		<Track cup = {cup} track = {track} />
-		<hr>
 		<ImageCard body={driver.name} image_path={"drivers/" + driver.filename} />	
+		<hr>
 		<ImageCard body={vehicle.name} image_path={"vehicles/" + vehicle.filename} />				
 		<ImageCard body={tire.name} image_path={"tires/" + tire.filename} />				
 		<ImageCard body={glider.name} image_path={"gliders/" + glider.filename} />
+		<hr>
+		<TrackList countTracks={4} />
 	</main>
 </Layout>
 
