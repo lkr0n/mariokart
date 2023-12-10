@@ -8,7 +8,7 @@
 - [X] favicon
 - [X] dlc courses
 - [X] dlc characters
-- [ ] uniform character sprites (found source of equally sized sprites)
+- [X] uniform character sprites (found source of equally sized sprites)
 - [ ] make it reactive (eat lucas' lunch)
 - [ ] optimise images
     There is a branch in www for using cloudflare images but I gave up on it
