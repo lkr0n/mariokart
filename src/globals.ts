@@ -45,7 +45,16 @@ const drivers = [
     { name: 'Wario', filename: 'MK8DX_Wario_Icon.png' },
     { name: 'Dry Bowser', filename: 'MK8DX_Dry_Bowser_Icon.png' },
     { name: 'Bowser', filename: 'MK8DX_Bowser_Icon.png' },
-    { name: 'Morton', filename: 'MK8DX_Morton_Icon.png' }
+    { name: 'Morton', filename: 'MK8DX_Morton_Icon.png' },
+    { name: 'Petey Piranha', filename: 'MK8DX_Piranhia_Icon.png'},
+    { name: 'Birdo', filename: 'MK8DX_Birdo_Icon.png'},
+    { name: 'Pauline', filename: 'MK8DX_Pauline_Icon.png'},
+    { name: 'Diddy Kong', filename: 'MK8DX_Diddy_Icon.png'},
+    { name: 'Funky Kong', filename: 'MK8DX_Funky_Icon.png'},
+    { name: 'Peachette', filename: 'MK8DX_Peachette_Icon.png'},
+    { name: 'Wiggler', filename: 'MK8DX_Wiggler_Icon.png'},
+    { name: 'Kamek', filename: 'MK8DX_Kamek_Icon.png'},
+    { name: 'Mii', filename: 'MK8DX_Mii_Icon.png'}
 ];
 
 const gliders = [
@@ -360,6 +369,26 @@ const cups = [
             { id: 1, title: "GBA Sunset Wilds" },
             { id: 2, title: "Wii Koopa Cape" },
             { id: 3, title: "Tour Vancour Velocity" }
+        ]
+    },
+    {
+        id: 22,
+        name: "Acorn",
+        tracks: [
+            { id: 0, title: "Rome Avanti" },
+            { id: 1, title: "DK Mountain" },
+            { id: 2, title: "Daisy Circuit" },
+            { id: 3, title: "Piranha Plant Cove" }
+        ]
+    },
+    {
+        id: 23,
+        name: "Spiny",
+        tracks: [
+            { id: 0, title: "Madrid Drive" },
+            { id: 1, title: "Rosalina's Ice World" },
+            { id: 2, title: "Bowser Castle 3" },
+            { id: 3, title: "Wii Rainbow Road" }
         ]
     }
 ]
